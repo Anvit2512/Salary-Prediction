@@ -1,0 +1,99 @@
+💼 Software Developer Salary Prediction (Stack Overflow 2020)
+This Streamlit web application predicts software developer salaries based on inputs like country, education level, and years of professional experience. It also provides data visualizations from the 2020 Stack Overflow Developer Survey to help users explore salary trends globally.
+
+📊 Dataset
+Source: Stack Overflow Developer Survey 2020
+
+Files Used:
+
+survey_results_public.csv: Cleaned survey responses (main dataset)
+
+survey_results_schema.csv: Schema for the survey questions
+
+so_survey_2020.pdf: Official survey questionnaire
+
+The dataset includes responses from developers worldwide, gathered between Feb 5 – Feb 28, 2020.
+
+🚀 Features
+🔍 Explore Page
+Pie chart of responses by country
+
+Bar chart of mean salary by country
+
+Line chart of mean salary by experience (in years)
+
+🤖 Predict Page
+Input: Country, Education Level, Years of Experience
+
+Output: Estimated annual salary in USD
+
+🛠 Tech Stack
+Frontend: Streamlit
+
+Backend: Scikit-learn model (RandomForestRegressor)
+
+Language: Python
+
+Libraries: pandas, numpy, matplotlib, pickle, scikit-learn
+
+📁 Project Structure
+bash
+Copy
+Edit
+├── app.py                     # Streamlit app entry point
+├── predict_page.py           # Prediction page logic
+├── explore_page.py           # Data visualization logic
+├── saved_steps.pkl           # Pickled model & label encoders
+├── survey_results_public.csv # Main dataset
+├── survey_results_schema.csv # Dataset schema
+├── so_survey_2020.pdf        # Survey questions PDF
+└── SalaryPrediction.ipynb    # Jupyter Notebook for training
+🧠 Model Training Overview
+The model is trained on:
+
+Country
+
+Education Level
+
+Years of Professional Coding Experience
+
+Preprocessing:
+Removed nulls and outliers (Salary < 10,000 or > 250,000)
+
+Mapped low-frequency countries to "Other"
+
+Simplified education levels
+
+Converted experience values (e.g., "Less than 1 year" → 0.5)
+
+Model:
+Algorithm: RandomForestRegressor
+
+Serialized with: pickle (stored in saved_steps.pkl)
+
+💡 How to Run
+Install dependencies:
+
+bash
+Copy
+Edit
+pip install streamlit pandas matplotlib scikit-learn
+Run the Streamlit app:
+
+bash
+Copy
+Edit
+streamlit run app.py
+📜 License
+This project uses the Open Database License (ODbL) as per Stack Overflow’s terms:
+
+Share & adapt freely
+
+Attribute Stack Overflow
+
+Keep the database open (share-alike)
+
+See: ODbL License
+
+🙏 Acknowledgment
+Massive thanks to all Stack Overflow contributors who participated in the 2020 survey. This project wouldn't be possible without your insights.
